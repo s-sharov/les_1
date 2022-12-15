@@ -10,4 +10,4 @@ int number = Convert.ToInt32(Console.ReadLine());
 if(number % 2 == 0)
     Console.Write($"Введенное число - {number} , является четным.");
 else
-    Console.Write($"Введенное число - {number} , является нечетным.");
+    Console.Write("Нет");
