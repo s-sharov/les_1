@@ -8,8 +8,10 @@
 5 | 125 */
 Console.WriteLine("Введите натуральное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-TableSquare(number);
-
+if(number > 0)
+    TableSquare(number);
+else
+    Console.WriteLine("Некорректные данные");
 void TableSquare(int num)
 {
     int count = 1;
