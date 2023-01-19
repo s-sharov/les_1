@@ -5,15 +5,15 @@
 
 1, -7, 567, 89, 223-> 3 */
 
-int[] CreateArrayRandomInt(int size, int start, int end)
+int GetNumPositiveElemArray(int[] arr)
 {
-    int[] array = new int[size];
-    Random random = new Random();
-    for (int i = 0; i < array.Length; i++)
+    int count = 0;
+    for (int i = 0; i < arr.Length; i++)
     {
-        array[i] = random.Next(start, end);
+        if(arr[i] > 0)
+            count++;
     }
-    return array;
+    return count;
 }
 
 void PrintArrayInt(int[] arr)
@@ -29,7 +29,14 @@ void PrintArrayInt(int[] arr)
     Console.WriteLine("]");
 }
 
-int[] array = new int[] {};
+Console.Write("Введите количество элементов массива: ");
+int sizeArray = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[sizeArray];
+for(int i = 0; i < array.Length; i++)
+{
+    Console.Write($"Индекс {i} = ");
+    array[i] = Convert.ToInt32(Console.ReadLine());
+}
 PrintArrayInt(array);
-array[0] = Convert.ToInt32(Console.ReadLine());
-PrintArrayInt(array);
+int result = GetNumPositiveElemArray(array);
+Console.WriteLine($"Количество положительных элементов в массиве: {result}");
