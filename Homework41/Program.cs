@@ -10,7 +10,7 @@ int GetNumPositiveElemArray(int[] arr)
     int count = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if(arr[i] > 0)
+        if (arr[i] > 0)
             count++;
     }
     return count;
@@ -21,22 +21,27 @@ void PrintArrayInt(int[] arr)
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
-        if(i < arr.Length - 1)
+        if (i < arr.Length - 1)
             Console.Write(arr[i] + ", ");
-        else 
+        else
             Console.Write(arr[i]);
     }
     Console.WriteLine("]");
 }
 
+void FillArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write($"Индекс {i} = ");
+        arr[i] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
 Console.Write("Введите количество элементов массива: ");
 int sizeArray = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[sizeArray];
-for(int i = 0; i < array.Length; i++)
-{
-    Console.Write($"Индекс {i} = ");
-    array[i] = Convert.ToInt32(Console.ReadLine());
-}
+FillArray(array);
 PrintArrayInt(array);
 int result = GetNumPositiveElemArray(array);
 Console.WriteLine($"Количество положительных элементов в массиве: {result}");
