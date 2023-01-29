@@ -23,11 +23,13 @@ void PrintMatrixDouble(double[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
+        Console.Write("[");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(matrix[i, j] + " ");
+            if(j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j]}, ");
+            else Console.Write($"{matrix[i, j]}");
         }
-        Console.WriteLine();
+        Console.WriteLine("]");
     }
 }
 
