@@ -43,22 +43,20 @@ void CreateMatrixMultiplMatrices(int[,] matrix1, int[,] matrix2, int[,] matrixRe
         {
             int sum = 0;
             for (int k = 0; k < matrix1.GetLength(1); k++)
-            {
                 sum += matrix1[i, k] * matrix2[k, j];
-            }
             matrixResult[i, j] = sum;
         }
     }
 }
 
 
-int[,] array1 = CreateMatrixRndInt(3, 2, 1, 10);
+int[,] array1 = CreateMatrixRndInt(3, 2, 2, 5);
 PrintMatrixInt(array1);
 Console.WriteLine();
-int[,] array2 = CreateMatrixRndInt(2, 3, 1, 10);
+int[,] array2 = CreateMatrixRndInt(2, 3, 2, 5);
 PrintMatrixInt(array2);
 Console.WriteLine();
-if (array1.GetLength(1) == array2.GetLength(0))
+if (array1.GetLength(0) == array2.GetLength(1))
 {
     int[,] resultArray = new int[array1.GetLength(0), array2.GetLength(1)];
     CreateMatrixMultiplMatrices(array1, array2, resultArray);
